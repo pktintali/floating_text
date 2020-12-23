@@ -15,7 +15,7 @@ class FloatingText extends StatefulWidget {
   /// By Default Set to 3
   final int floatingSpeed;
 
-  ///[TextStyle] for non [Text]
+  ///[TextStyle] for non floating [Text]
   final TextStyle textStyle;
 
   ///[TextStyle] for floating [Text]
