@@ -21,8 +21,10 @@ class FloatingText extends StatefulWidget {
   ///[TextStyle] for floating [Text]
   final TextStyle floatingTextStyle;
 
-  ///[TextDirection] for text
-  final TextDirection textDirection;
+  ///Enable RTL support
+  ///
+  ///boolean by default set to false
+  final bool isRTL;
 
   ///key
   final Key key;
@@ -30,7 +32,7 @@ class FloatingText extends StatefulWidget {
       {@required this.text,
       this.key,
       this.floatingSpeed = 3,
-      this.textDirection = TextDirection.ltr,
+      this.isRTL = false,
       this.textStyle = const TextStyle(),
       this.floatingTextStyle = const TextStyle(color: Colors.red),
       this.repeat = false});
@@ -65,8 +67,10 @@ class _FloatingTextState extends State<FloatingText> {
 
   void _splitString() {
     _sList.clear();
+    String s =
+        widget.isRTL ? widget.text.split('').reversed.join() : widget.text;
     for (int i = 0; i < widget.text.length; i++) {
-      _sList.add(widget.text[i]);
+      _sList.add(s[i]);
     }
     _temp = 0;
   }
@@ -105,7 +109,7 @@ class _FloatingTextState extends State<FloatingText> {
       _setTimer();
     }
     return Row(
-      textDirection: widget.textDirection,
+      textDirection: widget.isRTL ? TextDirection.rtl : TextDirection.ltr,
       key: widget.key,
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,

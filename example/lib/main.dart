@@ -40,6 +40,7 @@ class _CustomCardsExampleState extends State<CustomCardsExample> {
           text: 'Congratulations',
           repeat: true,
           floatingSpeed: 6,
+          isRTL: true,
           textStyle: TextStyle(
             fontSize: 40,
             color: Colors.black54,

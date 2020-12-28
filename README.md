@@ -3,11 +3,12 @@
 A light weight flutter package which provides beautiful floating text animations.
 
 ## Getting Started
+
 Add this package in your project's dependencies.
 
 ```yaml
 dependencies:
-  floating_text: ^0.0.1
+  floating_text: ^0.0.3
 ```
 
 Import the package:
@@ -17,6 +18,7 @@ import 'package:floating_text/floating_text.dart'
 ```
 
 Use Anywhere instead of <code>Text</code> Widget:
+
 ## Demo's
 
 <table>
@@ -72,7 +74,7 @@ RaisedButton(
 FloatingText(
    text: 'WELCOME',
    repeat: true,
-   textDirection: TextDirection.rtl,
+   isRTL: true,
    floatingSpeed: 12,
  ),
 ```
@@ -145,4 +147,3 @@ FloatingText(
 ## Author
 
 Pradeep Tintali (4gpradeep@gmail.com)
-
