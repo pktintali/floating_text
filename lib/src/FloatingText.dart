@@ -10,10 +10,10 @@ class FloatingText extends StatefulWidget {
   /// boolean by default set to false
   final bool repeat;
 
-  ///Speed for the [FloatingText] animation
+  ///Animation speed for the [FloatingText]
   ///
-  /// By Default Set to 3
-  final int floatingSpeed;
+  /// By Default Set to 200 milliseconds
+  final Duration duration;
 
   ///[TextStyle] for non floating [Text]
   final TextStyle textStyle;
@@ -31,7 +31,7 @@ class FloatingText extends StatefulWidget {
   FloatingText(
       {@required this.text,
       this.key,
-      this.floatingSpeed = 3,
+      this.duration = const Duration(milliseconds: 200),
       this.isRTL = false,
       this.textStyle = const TextStyle(),
       this.floatingTextStyle = const TextStyle(color: Colors.red),
@@ -46,7 +46,7 @@ class _FloatingTextState extends State<FloatingText> {
   String _pString;
   Timer _timer;
   double _temp = 0;
-  int speed;
+  Duration dur;
   void changePosition(Timer t) async {
     if ((widget.repeat && _temp != -1) || _temp < widget.text.length + 1) {
       _tList.clear();
@@ -77,17 +77,14 @@ class _FloatingTextState extends State<FloatingText> {
 
   void _setTimer() {
     _timer.cancel();
-    _timer = Timer.periodic(
-        Duration(milliseconds: (1000 / speed).round()), changePosition);
+    _timer = Timer.periodic(dur, changePosition);
   }
 
   @override
   void initState() {
     _splitString();
     _temp = 0;
-    _timer = Timer.periodic(
-        Duration(milliseconds: (1000 / widget.floatingSpeed).round()),
-        changePosition);
+    _timer = Timer.periodic(widget.duration, changePosition);
     super.initState();
   }
 
@@ -104,8 +101,8 @@ class _FloatingTextState extends State<FloatingText> {
       _pString = widget.text;
     }
 
-    if (widget.floatingSpeed != speed) {
-      speed = widget.floatingSpeed;
+    if (widget.duration != dur) {
+      dur = widget.duration;
       _setTimer();
     }
     return Row(

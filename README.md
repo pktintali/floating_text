@@ -8,7 +8,7 @@ Add this package in your project's dependencies.
 
 ```yaml
 dependencies:
-  floating_text: ^0.0.3
+  floating_text: ^0.0.4
 ```
 
 Import the package:
@@ -23,9 +23,9 @@ Use Anywhere instead of <code>Text</code> Widget:
 
 <table>
   <tr>
-    <th>Animated text down</th>
-    <th>Animated text shadow</th>
-    <th>Linear Animation</th>
+    <th>Animation 1</th>
+    <th>Animation 2</th>
+    <th>Animation 3</th>
   </tr>
   <tr>
     <td><img alt = 'floating_text down float animation' src = "https://raw.githubusercontent.com/pktintali/floating_text/main/example/screenshots/floating_down.gif" /></td>
@@ -36,7 +36,7 @@ Use Anywhere instead of <code>Text</code> Widget:
 <table>
   <tr>
     <th>Text On Button</th>
-    <th>Animated text up</th>
+    <th>Animated Up</th>
     <th>RTL Support</th>
   </tr>
   <tr>
@@ -63,7 +63,7 @@ RaisedButton(
   child: FloatingText(
     text: 'Button',
     repeat: true,
-    floatingSpeed: 10,
+    duration: Duration(milliseconds: 500),
   ),
 ),
 ```
@@ -75,7 +75,7 @@ FloatingText(
    text: 'WELCOME',
    repeat: true,
    isRTL: true,
-   floatingSpeed: 12,
+   duration: Duration(milliseconds: 100),
  ),
 ```
 
@@ -85,7 +85,7 @@ FloatingText(
 FloatingText(
 text: "WELCOME",
 repeat: true,
-floatingSpeed: 5,
+duration: Duration(milliseconds: 600),
 floatingTextStyle: TextStyle(
   color: Colors.blue,
   fontSize: 50,
@@ -102,7 +102,6 @@ color: Colors.black38,
 FloatingText(
     text: 'Congratulations',
     repeat: true,
-    floatingSpeed: 6,
     textStyle: TextStyle(
       fontSize: 40,
       color: Colors.black54,
@@ -126,7 +125,7 @@ FloatingText(
 FloatingText(
     text: 'Congratulations',
     repeat: true,
-    floatingSpeed: 6,
+    duration: Duration(milliseconds: 100),
     textStyle: TextStyle(
       fontSize: 40,
       color: Colors.black54,

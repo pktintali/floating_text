@@ -1,4 +1,7 @@
 # Changelog
+## [0.0.4] - 12/02/2021
+
+- floatingSpeed parameter changed to duration
 
 ## [0.0.3] - 28/12/2020
 

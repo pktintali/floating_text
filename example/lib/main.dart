@@ -39,8 +39,8 @@ class _CustomCardsExampleState extends State<CustomCardsExample> {
         child: FloatingText(
           text: 'Congratulations',
           repeat: true,
-          floatingSpeed: 6,
-          isRTL: true,
+          duration: Duration(milliseconds: 100),
+          // isRTL: true,
           textStyle: TextStyle(
             fontSize: 40,
             color: Colors.black54,
