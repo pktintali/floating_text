@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+
 class FloatingText extends StatefulWidget {
   /// Text for [Text] widget.
   final String text;
