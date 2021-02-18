@@ -1,11 +1,11 @@
 name: floating_text
 description: A light weight flutter package which provides beautiful floating text animations.
-version: 0.1.0-nullsafety.0
+version: 0.1.0-nullsafety.1
 homepage: https://github.com/pktintali/
 repository: https://github.com/pktintali/floating_text
 
 environment:
-  sdk: '>=2.12.0-259.12.beta <3.0.0'
+  sdk: ">=2.12.0-259.9.beta <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
