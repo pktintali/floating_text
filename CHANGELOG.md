@@ -1,4 +1,9 @@
 # Changelog
+
+## [0.1.0-nullsafety.0] - 18/02/2021
+
+- Migrated to null safety
+
 ## [0.0.4] - 12/02/2021
 
 - floatingSpeed parameter changed to duration

@@ -27,9 +27,9 @@ class FloatingText extends StatefulWidget {
   final bool isRTL;
 
   ///key
-  final Key key;
+  final Key? key;
   FloatingText(
-      {@required this.text,
+      {/*required*/ required this.text,
       this.key,
       this.duration = const Duration(milliseconds: 200),
       this.isRTL = false,
@@ -43,10 +43,10 @@ class FloatingText extends StatefulWidget {
 class _FloatingTextState extends State<FloatingText> {
   List<String> _sList = [];
   List<Widget> _tList = [];
-  String _pString;
-  Timer _timer;
+  String _pString = '';
+  late Timer _timer;
   double _temp = 0;
-  Duration dur;
+  Duration dur = Duration(milliseconds: 201);
   void changePosition(Timer t) async {
     if ((widget.repeat && _temp != -1) || _temp < widget.text.length + 1) {
       _tList.clear();
