@@ -1,9 +1,10 @@
+//Author : Pradeep Tintali
+//github : github.com/pktintali
+
 import 'package:flutter/material.dart';
 import 'package:floating_text/floating_text.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -31,24 +32,27 @@ class _CustomCardsExampleState extends State<CustomCardsExample> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'FloatingText Example',
         ),
       ),
       body: Center(
-        child: FloatingText(
+        //Using Floating Text as a Widget
+        child: const FloatingText(
           text: 'Congratulations',
           repeat: true,
-          duration: Duration(milliseconds: 100),
+          duration: Duration(milliseconds: 150),
           // isRTL: true,
-          textStyle: TextStyle(
+          //Customize your text
+          textStyle: const TextStyle(
             fontSize: 40,
             color: Colors.black54,
           ),
-          floatingTextStyle: TextStyle(
+          //Customize your Floating text
+          floatingTextStyle: const TextStyle(
             color: Colors.red,
-            fontSize: 40,
-            shadows: [
+            fontSize: 50,
+            shadows: const [
               BoxShadow(
                 color: Colors.yellow,
                 blurRadius: 10,
