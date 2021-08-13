@@ -1,6 +1,6 @@
 # floating_text
 
-A light weight flutter package which provides beautiful floating text animations.
+A light weight flutter package that provides beautiful floating text animations.
 
 ## Getting Started
 
@@ -143,6 +143,3 @@ FloatingText(
   ),
 ```
 
-## Author
-
-Pradeep Tintali (4gpradeep@gmail.com)
