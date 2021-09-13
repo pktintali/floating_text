@@ -1,4 +1,9 @@
 # Changelog
+
+## [0.1.1] - 13/09/2021
+
+- readme updated
+
 ## [0.1.0] - 12/06/2021
 
 - null safety in stable

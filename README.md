@@ -1,6 +1,21 @@
-# floating_text
+# Floating Text
 
-A light weight flutter package which provides beautiful floating text animations.
+<p>
+<a href="https://flutter.dev">
+    <img src="https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter" alt="Platform">
+  </a>
+  <a href="https://pub.dev/packages/floating_text" rel="ugc">
+    <img src="https://img.shields.io/badge/pub-0.1.1-blue" alt="Pub Package">
+  </a>
+  <a href="https://opensource.org/licenses/MIT" rel="ugc">
+    <img src="https://img.shields.io/badge/likes-19-green" alt="License: MIT">
+  </a>
+  <a href="https://opensource.org/licenses/MIT" rel="ugc">
+    <img src="https://img.shields.io/badge/license-MIT-red" alt="License: MIT">
+  </a>
+</p>
+
+A light weight flutter package that provides beautiful floating text animations.
 
 ## Getting Started
 
@@ -8,7 +23,7 @@ Add this package in your project's dependencies.
 
 ```yaml
 dependencies:
-  floating_text: ^0.0.4
+  floating_text: ^0.1.1
 ```
 
 Import the package:
@@ -17,7 +32,7 @@ Import the package:
 import 'package:floating_text/floating_text.dart'
 ```
 
-Use Anywhere instead of <code>Text</code> Widget:
+Use Anywhere instead of `Text` Widget:
 
 ## Demo's
 
@@ -143,6 +158,12 @@ FloatingText(
   ),
 ```
 
-## Author
+## Parameters
+- `text` - text to display on screen
+- `repeat` - by default `false`, set `true` if you want animation to repeat
+- `duration` - duration of the animation. Default value 200 milliseconds
+- `isRTL` - by default `false`, set `true` for RTL support
+- `textStyle` - text style for floating/animating part of text
+- `floatingTextStyle` - text style for not floating part of text
 
-Pradeep Tintali (4gpradeep@gmail.com)
+>Tip: Experiment with different `textStyle` and non `floatingTextStyle` to get some new cool effects
