@@ -38,11 +38,14 @@ class _CustomCardsExampleState extends State<CustomCardsExample> {
       ),
       body: Center(
         //Using Floating Text as a Widget
-        child: const FloatingText(
-          text: 'Congratulations',
+        child: FloatingText(
+          onAnimationComplete: () {
+            print('Animation Completed');
+          },
           repeat: true,
+          repeatCount: 3,
+          text: 'Congratulations',
           duration: Duration(milliseconds: 150),
-          // isRTL: true,
           //Customize your text
           textStyle: const TextStyle(
             fontSize: 40,

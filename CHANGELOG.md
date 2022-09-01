@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0] - 01/09/2022
+
+### What's new
+
+- Callback `onAnimationComplete` added. It will be called when the animation is completed.
+- Property `repeatCount` added. It defines how many time the animation should repeat. `repeat` must be _true_ for it to work.
+
+### What's fixed
+
+- TextOverflow problem fixed.
+- RTL support fixed.
+
 ## [0.1.1] - 13/09/2021
 
 - readme updated

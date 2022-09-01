@@ -7,8 +7,18 @@ class FloatingText extends StatefulWidget {
 
   ///Should [Animation] repeat
   ///
-  /// boolean by default set to false
+  /// boolean, by default set to false
   final bool repeat;
+
+  ///Integer, Number of times animation should repeat
+  ///
+  ///If not given, animation will not stop
+  ///
+  ///repeat should be true to work
+  final int? repeatCount;
+
+  ///What shoult happend once animation completed
+  final VoidCallback? onAnimationComplete;
 
   ///Animation speed for the [FloatingText]
   ///
@@ -35,7 +45,9 @@ class FloatingText extends StatefulWidget {
       this.isRTL = false,
       this.textStyle = const TextStyle(),
       this.floatingTextStyle = const TextStyle(color: Colors.red),
-      this.repeat = false});
+      this.repeat = false,
+      this.onAnimationComplete,
+      this.repeatCount});
   @override
   _FloatingTextState createState() => _FloatingTextState();
 }
@@ -47,28 +59,40 @@ class _FloatingTextState extends State<FloatingText> {
   late Timer _timer;
   double _temp = 0;
   Duration? dur;
+  int? _loopCount;
   void changePosition(Timer t) async {
     if ((widget.repeat && _temp != -1) || _temp < widget.text.length + 1) {
       _tList.clear();
       for (int i = 0; i < _sList.length; i++) {
-        _tList.add(Text(
-          _sList[i],
-          style: i == _temp ? widget.floatingTextStyle : widget.textStyle,
-        ));
+        _tList.add(
+          Text(
+            _sList[i],
+            style: i == _temp ? widget.floatingTextStyle : widget.textStyle,
+          ),
+        );
       }
       if (_temp == widget.text.length + 1) {
         _temp = -1;
+        if (_loopCount != null) {
+          _loopCount = _loopCount! - 1;
+        }
+        if (_loopCount == 0) {
+          _timer.cancel();
+          widget.onAnimationComplete!();
+        }
       }
       setState(() {
         _temp++;
       });
+    } else {
+      _timer.cancel();
+      widget.onAnimationComplete!();
     }
   }
 
   void _splitString() {
     _sList.clear();
-    String s =
-        widget.isRTL ? widget.text.split('').reversed.join() : widget.text;
+    String s = widget.text;
     for (int i = 0; i < widget.text.length; i++) {
       _sList.add(s[i]);
     }
@@ -82,6 +106,7 @@ class _FloatingTextState extends State<FloatingText> {
 
   @override
   void initState() {
+    _loopCount = widget.repeatCount;
     _splitString();
     _temp = 0;
     _timer = Timer.periodic(widget.duration, changePosition);
@@ -105,14 +130,18 @@ class _FloatingTextState extends State<FloatingText> {
       dur = widget.duration;
       _setTimer();
     }
-    return Row(
+
+    return Wrap(
       textDirection: widget.isRTL ? TextDirection.rtl : TextDirection.ltr,
       key: widget.key,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: _tList.map((s) {
-        return s;
-      }).toList(),
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: widget.isRTL
+          ? _tList.reversed.map((s) {
+              return s;
+            }).toList()
+          : _tList.map((s) {
+              return s;
+            }).toList(),
     );
   }
 }
