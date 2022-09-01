@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter" alt="Platform">
   </a>
   <a href="https://pub.dev/packages/floating_text" rel="ugc">
-    <img src="https://img.shields.io/badge/pub-0.1.1-blue" alt="Pub Package">
+    <img src="https://img.shields.io/badge/pub-0.2.0-blue" alt="Pub Package">
   </a>
   <a href="https://opensource.org/licenses/MIT" rel="ugc">
     <img src="https://img.shields.io/badge/likes-26-green" alt="License: MIT">
